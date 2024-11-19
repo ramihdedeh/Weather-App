@@ -53,30 +53,3 @@ form.addEventListener('submit', async (event) => {
     weatherDataPara.textContent = processedData;
     weatherInfoDiv.classList.remove('hidden');
 });
-
-
-// Create a random number of raindrops
-const rainContainer = document.getElementById("rain");
-
-function createRaindrops() {
-    const numberOfRaindrops = 100; // Number of raindrops to generate
-
-    for (let i = 0; i < numberOfRaindrops; i++) {
-        const raindrop = document.createElement('div');
-        raindrop.classList.add('raindrop');
-
-        // Randomize the starting position and speed of the raindrop
-        const startPositionX = Math.random() * window.innerWidth; // Random X position
-        const animationDuration = Math.random() * 2 + 3; // Duration between 3-5 seconds
-
-        raindrop.style.left = `${startPositionX}px`;
-        raindrop.style.animationDuration = `${animationDuration}s`;
-        raindrop.style.animationDelay = `${Math.random() * 2}s`; // Random delay before start
-
-        // Add the raindrop to the rain container
-        rainContainer.appendChild(raindrop);
-    }
-}
-
-// Call the function to create raindrops when the page loads
-window.onload = createRaindrops;
